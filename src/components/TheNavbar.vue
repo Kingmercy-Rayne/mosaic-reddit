@@ -10,9 +10,14 @@ export default {
 
 <style lang="stylus" scoped>
 .nav {
-  border: solid thin var(--text-color-primary);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width:100%;
   min-height: 10vh;
   display: flex;
   align-items: center;
+  border: solid thin var(--text-color-primary);
+
 }
 </style>

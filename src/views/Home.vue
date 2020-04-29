@@ -1,6 +1,7 @@
 <template>
   <div class="page">
     <div class="mosaic-container">
+      <!--
       <div class="card">1</div>
       <div class="card card--wide">2</div>
       <div class="card">3</div>
@@ -8,7 +9,10 @@
       <div class="card card--tall">5</div>
       <div class="card">6</div>
       <div class="card card--wide">7</div>
-      <div class="card">8</div>
+      <div class="card">8</div> -->
+      <div class="card" v-for="(post, id) in posts" :key="id">
+        <img :src="post.data.thumbnail" alt="" />
+      </div>
     </div>
   </div>
 </template>
@@ -18,6 +22,22 @@
 
 export default {
   name: 'Home',
+  mounted() {
+    this.load();
+  },
+  data() {
+    return { posts: [] };
+  },
+  methods: {
+    load() {
+      const url = 'https://www.reddit.com/r/photoshopbattles/new.json?sort=new&Limit=100';
+      fetch(url)
+        .then((res) => res.json())
+        .then((result) => {
+          this.posts = result.data.children;
+        });
+    },
+  },
 };
 </script>
 
@@ -25,27 +45,36 @@ export default {
 .mosaic-container {
   width: 100%;
   min-height: 400px;
-  border: solid thin crimson;
+  // border: solid thin crimson;
   margin-top: 1em;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-auto-rows: 200px;
-}
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 150px;
 
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid thin #666;
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid thin #ccc;
 
-  &:nth-child(2n+3) {
-    grid-row: span 2 / auto;
-  }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  &:nth-child(3n+1) {
-    grid-row: span 2 / auto;
-    grid-column: span 2 / auto;
+    @media screen and (min-width: 600px) {
+      &:nth-child(2n+3) {
+        grid-row: span 2 / auto;
+      }
+
+      &:nth-child(3n+3) {
+        grid-row: span 2 / auto;
+        grid-column: span 2 / auto;
+      }
+
+    }
   }
 }
 </style>
