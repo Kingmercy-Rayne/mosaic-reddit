@@ -11,6 +11,8 @@ export default {
 <style lang="stylus" scoped>
 .nav {
   border: solid thin var(--text-color-primary);
-  min-height: 12vh;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
 }
 </style>
