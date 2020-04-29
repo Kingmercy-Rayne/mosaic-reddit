@@ -25,5 +25,6 @@ export default {
 
 .page {
   width: 100%;
+  z-index: 1;
 }
 </style>

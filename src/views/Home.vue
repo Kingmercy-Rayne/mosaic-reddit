@@ -12,6 +12,7 @@
       <div class="card">8</div> -->
       <div class="card" v-for="(post, id) in posts" :key="id">
         <img :src="post.data.thumbnail" alt="" />
+        <p>Yo there</p>
       </div>
     </div>
   </div>
@@ -30,11 +31,12 @@ export default {
   },
   methods: {
     load() {
-      const url = 'https://www.reddit.com/r/photoshopbattles/new.json?sort=new&Limit=100';
+      const url = 'https://www.reddit.com/r/photoshopbattles/new.json?sort=new&limit=100&t=all';
       fetch(url)
         .then((res) => res.json())
         .then((result) => {
           this.posts = result.data.children;
+          console.log(result.data);
         });
     },
   },
@@ -43,25 +45,31 @@ export default {
 
 <style lang="stylus" scoped>
 .mosaic-container {
-  width: 100%;
-  min-height: 400px;
   // border: solid thin crimson;
-  margin-top: 1em;
   display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-auto-rows: 150px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 400px;
+  margin-top: 1em;
+  background: #eee;
 
   .card {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     border: solid thin #ccc;
+    background: crimson;
+    transition: transform 0.4 ease-in-out;
+    z-index: 10;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    &:hover {
+      transform: scale(1.04);
+      background: rgba(0, 0, 0, 0.4);
     }
 
     @media screen and (min-width: 600px) {
@@ -69,11 +77,28 @@ export default {
         grid-row: span 2 / auto;
       }
 
-      &:nth-child(3n+3) {
+      &:nth-child(4n+7) {
         grid-row: span 2 / auto;
         grid-column: span 2 / auto;
       }
 
+      &:nth-child(2n) ~ &:nth-child(n) {
+        // stupid code
+        border: solid thick crimson;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      z-index: -5;
+    }
+
+    p {
+      position relative
+      z-index: 200;
     }
   }
 }

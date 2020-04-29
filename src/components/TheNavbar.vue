@@ -13,11 +13,11 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
-  width:100%;
+  width: 100%;
   min-height: 10vh;
   display: flex;
   align-items: center;
   border: solid thin var(--text-color-primary);
-
+  z-index: 100;
 }
 </style>
