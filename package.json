@@ -40,11 +40,20 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "linebreak-style": "off"
+    }
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "prettier": {
+    "arrowParens": "always",
+    "trailingComma": "es5",
+    "semi": true,
+    "singleQuote": true,
+    "endOfLine": "auto"
+  }
 }

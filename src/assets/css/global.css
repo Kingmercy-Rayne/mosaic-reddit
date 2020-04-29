@@ -1,0 +1,47 @@
+:root {
+  --primary-color: #051024;
+  --color-tetradic: #06b7e0;
+  --text-color-primary: #eee;
+  --text-color-alt: #f2532b;
+  --text-color-tri: #777;
+  --border-color: #777;
+  --border-color-alt: #f2532b;
+  --button-background-color: #051024;
+  --button-background-alt: transparent;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+li {
+  list-style-type: none;
+}
+body {
+  width: 100%;
+}
+img {
+  width: 100%;
+}
+button {
+  cursor: pointer;
+  background: none;
+  border: solid thin var(--border-color);
+  color: #fff;
+  background: var(--button-background-color);
+  font-size: 1.2rem;
+  padding: 0.8em;
+  transition: all 0.2s ease-in-out;
+}
+button:hover {
+  transform: scale(1.05);
+}
