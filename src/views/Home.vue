@@ -20,26 +20,17 @@
 
 <script>
 // @ is an alias to /src
+import { mapState } from 'vuex';
+// import axios from 'axios';
 
 export default {
   name: 'Home',
   mounted() {
-    this.load();
+    // dispatch an action that commits a mutation
+    this.$store.dispatch('fetchPosts');
   },
-  data() {
-    return { posts: [] };
-  },
-  methods: {
-    load() {
-      const url = 'https://www.reddit.com/r/photoshopbattles/new.json?sort=new&limit=100&t=all';
-      fetch(url)
-        .then((res) => res.json())
-        .then((result) => {
-          this.posts = result.data.children;
-          console.log(result.data);
-        });
-    },
-  },
+  computed: { ...mapState(['posts', 'loading']) },
+  methods: {},
 };
 </script>
 
@@ -69,7 +60,7 @@ export default {
 
     &:hover {
       transform: scale(1.04);
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.9);
     }
 
     @media screen and (min-width: 600px) {
@@ -97,7 +88,7 @@ export default {
     }
 
     p {
-      position relative
+      position: relative;
       z-index: 200;
     }
   }
