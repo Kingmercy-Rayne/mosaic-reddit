@@ -25,7 +25,8 @@ export default {
 
 .page {
   width: 100%;
+  position: relative;
   z-index: 1;
-  margin-top:10vh;
+  margin-top: 10vh;
 }
 </style>

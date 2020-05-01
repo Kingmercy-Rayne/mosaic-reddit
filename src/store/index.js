@@ -22,7 +22,7 @@ export default new Vuex.Store({
     fetchPosts({ commit }) {
       const URL = 'https://www.reddit.com/r/photoshopbattles/new.json?sort=new&limit=100&t=all';
       axios.get(URL).then((res) => {
-        console.log(res.data.data.childrem);
+        console.log(res.data.data);
         commit('updatePosts', res.data.data.children);
         commit('changeLoadingState', false);
       });

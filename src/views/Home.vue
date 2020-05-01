@@ -11,7 +11,8 @@
       <div class="card card--wide">7</div>
       <div class="card">8</div> -->
       <div class="card" v-for="(post, id) in posts" :key="id">
-        <img :src="post.data.thumbnail" alt="" />
+        <img :src="post.data.url" alt="" />
+        <div class="backdrop-filter"></div>
         <p>Yo there</p>
       </div>
     </div>
@@ -50,17 +51,18 @@ export default {
 
   .card {
     position: relative;
+    border: solid thin #ccc;
+    background: rgba(0,0,0,0.2);
+    transition: all 0.15 ease-in-out;
+    z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid thin #ccc;
-    background: crimson;
-    transition: transform 0.4 ease-in-out;
-    z-index: 10;
+    flex-direction: column;
 
     &:hover {
-      transform: scale(1.04);
-      background: rgba(0, 0, 0, 0.9);
+      transform: scale(1.15);
+      z-index: 3000;
     }
 
     @media screen and (min-width: 600px) {
@@ -79,12 +81,32 @@ export default {
       }
     }
 
+    .backdrop-filter {
+      position: absolute;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.4);
+      filter: blur(0.3rem);
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transition: all 0.15 ease-in-out;
+
+      &:hover{
+      background: rgba(0, 0, 0, 0);
+        filter: blur(0);
+      }
+    }
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       position: absolute;
+      left: 0;
+      top: 0;
       z-index: -5;
+      // visibility: hidden;
     }
 
     p {
