@@ -13,7 +13,7 @@
       <div class="card" v-for="(post, id) in posts" :key="id">
         <img :src="post.data.url" alt="" />
         <div class="backdrop-filter"></div>
-        <p>Yo there</p>
+        <p>{{ post.data.ups }}</p>
       </div>
     </div>
   </div>
@@ -22,7 +22,6 @@
 <script>
 // @ is an alias to /src
 import { mapState } from 'vuex';
-// import axios from 'axios';
 
 export default {
   name: 'Home',
@@ -51,18 +50,20 @@ export default {
 
   .card {
     position: relative;
-    border: solid thin #ccc;
-    background: rgba(0,0,0,0.2);
-    transition: all 0.15 ease-in-out;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.1 ease-in-out;
     z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-radius: 0;
+    filter: drop-shadow(8px 8px 10px #555);
 
     &:hover {
       transform: scale(1.15);
       z-index: 3000;
+      border-radius: 2rem;
     }
 
     @media screen and (min-width: 600px) {
@@ -85,15 +86,14 @@ export default {
       position: absolute;
       z-index: 10;
       background: rgba(0, 0, 0, 0.4);
-      filter: blur(0.3rem);
       left: 0;
       top: 0;
       right: 0;
       bottom: 0;
-      transition: all 0.15 ease-in-out;
+      transition: all 0.1 ease-in-out;
 
-      &:hover{
-      background: rgba(0, 0, 0, 0);
+      &:hover {
+        background: rgba(0, 0, 0, 0);
         filter: blur(0);
       }
     }
@@ -110,8 +110,18 @@ export default {
     }
 
     p {
-      position: relative;
+      position: absolute;
       z-index: 200;
+      font-size: 1rem;
+      right: 0.8em;
+      bottom: 0.8em;
+      border: solid thin #eee;
+      padding: 0.8em;
+      border-radius: 50%;
+      border: none;
+      color: #eee;
+      background: linear-gradient(120deg, #FF7575, #FF4D4D);
+      filter: opacity(0.7) drop-shadow(8px 8px 10px #111);
     }
   }
 }
