@@ -1,6 +1,7 @@
 <template>
   <div class="page">
-    <div class="mosaic-container">
+    <div v-if="loading" class="loading__view"></div>
+    <div v-else class="mosaic-container">
       <!--
       <div class="card">1</div>
       <div class="card card--wide">2</div>
@@ -35,6 +36,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.loading__view {
+  flex-grow: 1;
+  border: solid thin green;
+  width: 100%;
+  padding: 10em;
+}
+
 .mosaic-container {
   // border: solid thin crimson;
   display: grid;
@@ -116,10 +124,11 @@ export default {
       right: 0.8em;
       bottom: 0.8em;
       border: solid thin #eee;
-      padding: 0.8em;
+      padding: 0.4em;
       border-radius: 50%;
       border: none;
       color: #eee;
+      line-height: 1;
       background: linear-gradient(120deg, #FF7575, #FF4D4D);
       filter: opacity(0.7) drop-shadow(8px 8px 10px #111);
     }

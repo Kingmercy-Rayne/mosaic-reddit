@@ -17,7 +17,8 @@ export default {
   min-height: 10vh;
   display: flex;
   align-items: center;
-  border: solid thin var(--text-color-primary);
-  z-index: 100;
+  border: solid thin crimson;
+  z-index: 10;
+  background: linear-gradient(to right, #fff 40%, #eee);
 }
 </style>
