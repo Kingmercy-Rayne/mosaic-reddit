@@ -14,7 +14,7 @@
       <div class="card" v-for="(post, id) in posts" :key="id">
         <img :src="post.data.thumbnail" alt="" />
         <div class="backdrop-filter"></div>
-        <p>{{ post.data.ups }}</p>
+        <p class="upvotes"><i class="fas fa fa-thumbs-up"></i> {{ post.data.ups }}</p>
       </div>
     </div>
   </div>
@@ -68,7 +68,7 @@ export default {
     align-items: center;
     flex-direction: column;
     border-radius: 0;
-    filter: drop-shadow(8px 8px 10px #555);
+    filter: drop-shadow(4px 4px 7px #555);
 
     &:hover {
       transform: scale(1.15);
@@ -119,20 +119,20 @@ export default {
       // visibility: hidden;
     }
 
-    p {
+    .upvotes {
       position: absolute;
       z-index: 200;
-      font-size: 1rem;
       right: 0.8em;
       bottom: 0.8em;
-      border: solid thin #eee;
-      padding: 0.4em;
-      border-radius: 50%;
+      padding: 0.5em;
+      border-radius: 1em;
       border: none;
+      font-size: 1rem;
       color: #eee;
       line-height: 1;
-      background: linear-gradient(120deg, #782424, #FF4D4D);
-      filter: opacity(0.7) drop-shadow(8px 8px 10px #111);
+      font-size: 0.8rem;
+      background: rgba(0,0,0,0.2);
+      filter: opacity(0.9) drop-shadow(8px 8px 10px #111);
     }
   }
 }
