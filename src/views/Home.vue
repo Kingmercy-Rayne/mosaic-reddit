@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div v-if="loading" class="loading__view"></div>
+    <div v-if="loading" class="loading__view"><h1>LOADING...</h1></div>
     <div v-else class="mosaic-container">
       <!--
       <div class="card">1</div>
@@ -12,7 +12,7 @@
       <div class="card card--wide">7</div>
       <div class="card">8</div> -->
       <div class="card" v-for="(post, id) in posts" :key="id">
-        <img :src="post.data.url" alt="" />
+        <img :src="post.data.thumbnail" alt="" />
         <div class="backdrop-filter"></div>
         <p>{{ post.data.ups }}</p>
       </div>
@@ -38,9 +38,11 @@ export default {
 <style lang="stylus" scoped>
 .loading__view {
   flex-grow: 1;
-  border: solid thin green;
   width: 100%;
   padding: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mosaic-container {
@@ -129,7 +131,7 @@ export default {
       border: none;
       color: #eee;
       line-height: 1;
-      background: linear-gradient(120deg, #FF7575, #FF4D4D);
+      background: linear-gradient(120deg, #782424, #FF4D4D);
       filter: opacity(0.7) drop-shadow(8px 8px 10px #111);
     }
   }
