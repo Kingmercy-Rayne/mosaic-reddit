@@ -28,7 +28,7 @@ export default {
   name: 'Home',
   mounted() {
     // dispatch an action that commits a mutation
-    this.$store.dispatch('fetchPosts');
+    this.$store.dispatch('INITIAL_POST_FETCH');
   },
   computed: { ...mapState(['posts', 'loading']) },
   methods: {},

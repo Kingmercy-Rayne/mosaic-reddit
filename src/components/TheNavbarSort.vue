@@ -1,5 +1,9 @@
 <template>
-  <ul class="the-navbar-sort"></ul>
+  <ul class="the-navbar-sort">
+    {{
+      this.$store.state.targetSubreddit
+    }}
+  </ul>
 </template>
 
 <script>
@@ -12,9 +16,10 @@ export default {
 .the-navbar-sort {
   position: relative;
   min-height: 10vh;
-  top: 9vh;
+  top: 10vh;
   padding: 1em;
   border: solid thin crimson;
   width: 100%;
+  color: black;
 }
 </style>

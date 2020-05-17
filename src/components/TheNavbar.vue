@@ -2,7 +2,7 @@
   <nav class="nav">
     <ul>
       <the-logo />
-      <li><i class="fas fa fa-search"></i></li>
+      <v-search />
       <li><i class="fas fa fa-arrow-down"></i></li>
     </ul>
   </nav>
@@ -10,11 +10,13 @@
 
 <script>
 import TheLogo from '@/components/TheLogo.vue';
+import VSearch from '@/components/VSearch.vue';
 
 export default {
   name: 'TheNavbar',
   components: {
     TheLogo,
+    VSearch,
   },
 };
 </script>
@@ -25,7 +27,7 @@ export default {
   left: 0;
   top: 0;
   width: 100%;
-  min-height: 8vh;
+  min-height: 10vh;
   display: flex;
   align-items: center;
   z-index: 10;
@@ -38,6 +40,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     flex-grow: 1;
+    height: 100%;
 
     li {
       padding: 0.4em;

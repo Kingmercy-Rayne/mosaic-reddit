@@ -1,14 +1,17 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 :root {
   --primary-color: #051024;
   --color-tetradic: #06b7e0;
-  --text-color-primary: #eee;
-  --text-color-alt: #f2532b;
-  --text-color-tri: #777;
-  --border-color: #777;
-  --border-color-alt: #f2532b;
-  --button-background-color: #051024;
-  --button-background-alt: transparent;
+  --text-color--primary: #000;
+  --text-color--alt: #eee;
+  --text-color--tri: #777;
+  --border-color--primary: #777;
+  --border-color--alt: #f2532b;
+  --button-bg--primary: #051024;
+  --button-bg--alt: transparent;
+  --font-family--primary: 'Catamaran';
+  --font-family--alt: 'Montserrat';
 }
 
 *,
@@ -27,9 +30,14 @@ a {
 li {
   list-style-type: none;
 }
-body {
+
+body,
+html {
   width: 100%;
+  color: var(--text-color--primary);
+  font-family: 'Montserrat', 'Catamaran', Avenir, Helvetica, Arial, sans-serif;
 }
+
 img {
   width: 100%;
 }
