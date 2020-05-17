@@ -1,7 +1,7 @@
 <template>
   <nav class="nav">
     <ul>
-      <li><i class="fas fa fa-reddit fa-2x"></i></li>
+      <the-logo />
       <li><i class="fas fa fa-search"></i></li>
       <li><i class="fas fa fa-arrow-down"></i></li>
     </ul>
@@ -9,8 +9,13 @@
 </template>
 
 <script>
+import TheLogo from '@/components/TheLogo.vue';
+
 export default {
   name: 'TheNavbar',
+  components: {
+    TheLogo,
+  },
 };
 </script>
 
@@ -20,11 +25,12 @@ export default {
   left: 0;
   top: 0;
   width: 100%;
-  min-height: 10vh;
+  min-height: 8vh;
   display: flex;
   align-items: center;
   z-index: 10;
-  background: linear-gradient(150deg, #B73A5D 20%, #534666);
+  background: #fff;
+  box-shadow: -0.2em 0.01em 1em 0.01em #222;
 
   ul {
     display: flex;

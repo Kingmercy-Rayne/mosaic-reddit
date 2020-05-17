@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <The--Navbar />
+    <the-navbar-sort />
     <router-view />
   </div>
 </template>
 
 <script>
 import TheNavbar from './components/TheNavbar.vue';
+import TheNavbarSort from './components/TheNavbarSort.vue';
 
 export default {
   components: {
     'The--Navbar': TheNavbar,
+    TheNavbarSort,
   },
 };
 </script>

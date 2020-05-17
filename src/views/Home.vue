@@ -48,16 +48,17 @@ export default {
 .mosaic-container {
   // border: solid thin crimson;
   display: grid;
-  gap: 0.5rem;
+  gap: 0.7rem;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-auto-rows: 150px;
   position: relative;
   z-index: 1;
   width: 100%;
   min-height: 400px;
-  margin-top: 5vh;
+  // margin-top: 5vh;
   background: #eee;
   padding: 0 15%;
+  padding-top: 3vh;
 
   .card {
     position: relative;
@@ -75,19 +76,20 @@ export default {
       // border-radius: 2rem;
     }
 
-    @media screen and (min-width: 600px) {
-      &:nth-child(2n+3) {
+    @media screen and (min-width: 1200px) {
+      &:nth-child(2n+4) {
         grid-row: span 2 / auto;
       }
 
-      &:nth-child(4n+7) {
-        grid-row: span 2 / auto;
+      &:nth-child(2n+10) {
         grid-column: span 2 / auto;
+        grid-row: span 2 / auto;
       }
+    }
 
-      &:nth-child(2n) ~ &:nth-child(n) {
-        // stupid code
-        border: solid thick crimson;
+    @media screen and (min-width: 600px) {
+      &:nth-child(2n+4) {
+        grid-row: span 2 / auto;
       }
     }
 
@@ -129,7 +131,7 @@ export default {
       color: #eee;
       line-height: 1;
       font-size: 0.7rem;
-      background: rgba(0,0,0,0.2);
+      background: rgba(0, 0, 0, 0.2);
       filter: opacity(0.9) drop-shadow(8px 8px 10px #111);
     }
   }
