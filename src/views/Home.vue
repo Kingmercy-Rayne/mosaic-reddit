@@ -55,12 +55,12 @@ export default {
   z-index: 1;
   width: 100%;
   min-height: 400px;
-  margin-top: 1em;
+  margin-top: 5vh;
   background: #eee;
+  padding: 0 15%;
 
   .card {
     position: relative;
-    background: rgba(0, 0, 0, 0.2);
     transition: all 0.1 ease-in-out;
     z-index: 5;
     display: flex;
@@ -68,12 +68,11 @@ export default {
     align-items: center;
     flex-direction: column;
     border-radius: 0;
-    filter: drop-shadow(4px 4px 7px #555);
 
     &:hover {
-      transform: scale(1.15);
+      transform: scale(1.02);
       z-index: 3000;
-      border-radius: 2rem;
+      // border-radius: 2rem;
     }
 
     @media screen and (min-width: 600px) {
@@ -95,7 +94,7 @@ export default {
     .backdrop-filter {
       position: absolute;
       z-index: 10;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.2);
       left: 0;
       top: 0;
       right: 0;
@@ -104,7 +103,6 @@ export default {
 
       &:hover {
         background: rgba(0, 0, 0, 0);
-        filter: blur(0);
       }
     }
 
@@ -122,15 +120,15 @@ export default {
     .upvotes {
       position: absolute;
       z-index: 200;
-      right: 0.8em;
-      bottom: 0.8em;
+      right: 5%;
+      bottom: 5%;
       padding: 0.5em;
-      border-radius: 1em;
+      border-radius: 0.6em;
       border: none;
       font-size: 1rem;
       color: #eee;
       line-height: 1;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       background: rgba(0,0,0,0.2);
       filter: opacity(0.9) drop-shadow(8px 8px 10px #111);
     }
