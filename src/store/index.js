@@ -8,7 +8,9 @@ export default new Vuex.Store({
   state: {
     posts: [],
     targetSubreddit: 'photoshopbattles',
-    loading: true,
+    sortBy: '',
+    timeframe: '',
+    isLoading: true,
   },
   getters: {},
   mutations: {
@@ -16,7 +18,7 @@ export default new Vuex.Store({
       state.posts = payload;
     },
     CHANGE_LOADING_STATE(state, payload) {
-      state.loading = payload;
+      state.isLoading = payload;
     },
     CHANGE_TARGET_SUBREDDIT(state, payload) {
       state.targetSubreddit = payload;

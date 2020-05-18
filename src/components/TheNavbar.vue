@@ -1,10 +1,9 @@
 <template>
   <nav class="nav">
-    <ul>
-      <the-logo />
-      <v-search />
-      <li><i class="fas fa fa-arrow-down"></i></li>
-    </ul>
+    <the-logo />
+    <v-search />
+    <li><i class="fas fa fa-book"></i></li>
+    <li><i class="fas fa fa-star"></i></li>
   </nav>
 </template>
 
@@ -33,44 +32,39 @@ export default {
   z-index: 10;
   background: #fff;
   box-shadow: -0.2em 0.01em 1em 0.01em #222;
+  padding: 0.4em;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 
-  ul {
-    display: flex;
+  li {
     padding: 0.4em;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-    height: 100%;
+    margin: 0 1em;
+    border-radius: 50%;
+    line-height: 0.5;
+    transition: all 0.4 ease-in-out;
+    color: #CDE0C9;
+    opacity: 0.9;
+    font-size: 1rem;
 
-    li {
-      padding: 0.4em;
-      margin: 0 1em;
-      border-radius: 50%;
-      line-height: 0.5;
-      transition: all 0.4 ease-in-out;
-      color: #CDE0C9;
-      opacity: 0.9;
-      font-size: 1rem;
+    &:hover {
+      border: solid thin #888;
+      opacity: 0.95;
+      transform: scale(0.95);
+    }
 
-      &:hover {
-        border: solid thin #888;
-        opacity: 0.95;
-        transform: scale(0.95);
-      }
+    &:nth-child(1) {
+      color: black;
+      background: #F9E07F;
+      padding: 0;
+    }
 
-      &:nth-child(1) {
-        color: black;
-        background: #F9E07F;
-        padding: 0;
-      }
+    &:nth-child(2) {
+      margin-left: auto;
+    }
 
-      &:nth-child(2) {
-        margin-left: auto;
-      }
-
-      &:not(:nth-child(1)):hover {
-        color: #eee;
-      }
+    &:not(:nth-child(1)):hover {
+      color: #eee;
     }
   }
 }
