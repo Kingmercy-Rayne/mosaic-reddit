@@ -2,8 +2,11 @@
   <nav class="nav">
     <the-logo />
     <v-search />
-    <li><i class="fas fa fa-book"></i></li>
-    <li><i class="fas fa fa-star"></i></li>
+    <ul>
+      <li><i class="fas fa fa-th"></i></li>
+      <li><i class="fas fa fa-book"></i></li>
+      <li><i class="fas fa fa-star"></i></li>
+    </ul>
   </nav>
 </template>
 
@@ -37,34 +40,24 @@ export default {
   align-items: center;
   flex-direction: row;
 
-  li {
-    padding: 0.4em;
-    margin: 0 1em;
-    border-radius: 50%;
-    line-height: 0.5;
-    transition: all 0.4 ease-in-out;
-    color: #CDE0C9;
-    opacity: 0.9;
-    font-size: 1rem;
+  ul {
+    display: flex;
 
-    &:hover {
-      border: solid thin #888;
-      opacity: 0.95;
-      transform: scale(0.95);
-    }
+    li {
+      padding: 0.4em;
+      margin: 0 1em;
+      line-height: 0.5;
+      transition: all 0.4 ease-in-out;
+      color: #222;
+      font-size: 1rem;
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
 
-    &:nth-child(1) {
-      color: black;
-      background: #F9E07F;
-      padding: 0;
-    }
-
-    &:nth-child(2) {
-      margin-left: auto;
-    }
-
-    &:not(:nth-child(1)):hover {
-      color: #eee;
+      &:hover {
+        border: solid thin #888;
+        transform: scale(0.95);
+      }
     }
   }
 }

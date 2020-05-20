@@ -26,6 +26,8 @@ export default {
   computed: {
     ...mapState(['targetSubreddit']),
     searchInput: {
+      // bind the Computed Setter directly to the store mutation
+      // and v-model the getter unto the Inputfield
       set(searchInput) {
         this.$store.commit('CHANGE_TARGET_SUBREDDIT', searchInput);
       },

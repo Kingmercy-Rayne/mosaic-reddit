@@ -17,15 +17,15 @@ export default {
     return {
       filterFlags: [
         {
-          filter: 'New',
+          filter: 'new',
           iconClass: 'fas fa fa-tag',
         },
         {
-          filter: 'Hot',
+          filter: 'hot',
           iconClass: 'fas fa fa-fire',
         },
         {
-          filter: 'Top',
+          filter: 'top',
           iconClass: 'fas fa fa-bar-chart',
         },
       ],
@@ -59,6 +59,7 @@ export default {
 
     li {
       margin: 0 1em;
+      color: black;
     }
   }
 }
