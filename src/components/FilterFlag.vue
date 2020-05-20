@@ -1,18 +1,36 @@
 <template>
-  <span class="filter-flag" @click="sortPosts">
+  <span
+    class="filter-flag"
+    @click="sortPosts"
+    :style="[
+      filter == sortBy
+        ? {
+            background: 'var(--button-bg--primary)',
+            color: 'var(--text-color--alt)',
+            border: 'none',
+            borderRadius: '0.4em',
+          }
+        : '',
+    ]"
+  >
     <i :class="iconClass"></i>
     <h5>{{ filter }}</h5></span
   >
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'FilterFlag',
   props: ['filter', 'iconClass'],
+  computed: {
+    ...mapState(['sortBy']),
+  },
   methods: {
     sortPosts() {
+      // change sortBy state in the store and make new API call based on updated data
       this.$store.commit('CHANGE_SORTING_ORDER', this.filter);
-      console.log('sorting by: ', this.$store.state.sortBy);
       this.$store.dispatch('FETCH_POSTS');
     },
   },
@@ -39,5 +57,12 @@ export default {
   i {
     font-size: 1rem;
   }
+}
+
+.filter-flag__backgroundg {
+  background: var(--button-bg--primary);
+  color: var(--text-color--alt);
+  border: none;
+  border-radius: 0.4em;
 }
 </style>

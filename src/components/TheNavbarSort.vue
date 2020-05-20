@@ -54,7 +54,7 @@ export default {
   ul {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 
     li {

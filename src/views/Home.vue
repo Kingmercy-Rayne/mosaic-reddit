@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div v-if="loading" class="loading__view"><h1>LOADING...</h1></div>
+    <loading-indicator v-if="isLoading" />
     <div v-else class="mosaic-container">
       <!--
       <div class="card">1</div>
@@ -23,28 +23,23 @@
 <script>
 // @ is an alias to /src
 import { mapState } from 'vuex';
+import LoadingIndicator from '@/components/LoadingIndicator.vue';
 
 export default {
   name: 'Home',
+  components: {
+    LoadingIndicator,
+  },
   mounted() {
     // dispatch an action that commits a mutation
     this.$store.dispatch('INITIAL_POST_FETCH');
   },
-  computed: { ...mapState(['posts', 'loading']) },
+  computed: { ...mapState(['posts', 'isLoading']) },
   methods: {},
 };
 </script>
 
 <style lang="stylus" scoped>
-.loading__view {
-  flex-grow: 1;
-  width: 100%;
-  padding: 10em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .mosaic-container {
   // border: solid thin crimson;
   display: grid;
