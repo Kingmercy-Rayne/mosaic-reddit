@@ -2,16 +2,7 @@
   <span
     class="filter-flag"
     @click="sortPosts"
-    :style="[
-      filter == sortBy
-        ? {
-            background: 'var(--button-bg--primary)',
-            color: 'var(--text-color--alt)',
-            border: 'none',
-            borderRadius: '0.4em',
-          }
-        : '',
-    ]"
+    :class="filter == sortBy ? 'filter-flag__background--active' : ''"
   >
     <i :class="iconClass"></i>
     <h5>{{ filter }}</h5></span
@@ -56,13 +47,18 @@ export default {
 
   i {
     font-size: 1rem;
+    // color: green;
   }
 }
 
-.filter-flag__backgroundg {
+.filter-flag__background--active {
   background: var(--button-bg--primary);
   color: var(--text-color--alt);
   border: none;
   border-radius: 0.4em;
+}
+
+.filter-flag__icon--active {
+  color;
 }
 </style>
