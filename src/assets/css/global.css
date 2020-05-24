@@ -6,12 +6,15 @@
   --text-color--primary: #000;
   --text-color--alt: #eee;
   --text-color--tri: #777;
+  --bg-color--primary: #fff;
+  --bg-color--alt: #f8f8ff;
   --border-color--primary: #777;
   --border-color--alt: #051024;
   --button-bg--primary: #051024;
   --button-bg--alt: transparent;
   --font-family--primary: 'Catamaran';
   --font-family--alt: 'Montserrat';
+  --padding-LR--global: 15%;
 }
 
 *,

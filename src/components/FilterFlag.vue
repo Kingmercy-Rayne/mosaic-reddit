@@ -30,7 +30,7 @@ export default {
 
 <style lang="stylus" scoped>
 .filter-flag {
-  padding: 0.5em;
+  padding: 0.3em;
   border: solid thin #bbb;
   font-family: var(--font-family--alt);
   font-size: 0.8rem;
@@ -40,6 +40,11 @@ export default {
   align-items: center;
   cursor: pointer;
   text-transform: capitalize;
+  border-radius: 0.5em;
+
+  @media screen and (max-width: 800px) {
+    font-size: 0.7rem;
+  }
 
   & * {
     margin: 0.2em 0.8em;
@@ -47,7 +52,10 @@ export default {
 
   i {
     font-size: 1rem;
-    // color: green;
+
+    @media screen and (max-width: 800px) {
+      font-size: 0.9rem;
+    }
   }
 }
 
@@ -55,10 +63,10 @@ export default {
   background: var(--button-bg--primary);
   color: var(--text-color--alt);
   border: none;
-  border-radius: 0.4em;
 }
 
 .filter-flag__icon--active {
+  // redundant
   color;
 }
 </style>

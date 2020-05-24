@@ -46,16 +46,20 @@ export default {
   align-items: center;
   min-height: 10vh;
   width: 100%;
-  padding: 1em;
-  BACKGROUND: #eee;
+  padding: 1em var(--padding-LR--global);
+  background: var(bg--color--primary);
   // border: solid thin crimson;
   color: black;
 
   ul {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+
+    @media screen and (max-width: 800px) {
+      justify-content: center;
+    }
 
     li {
       margin: 0 1em;

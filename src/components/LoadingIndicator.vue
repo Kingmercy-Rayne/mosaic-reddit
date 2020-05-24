@@ -14,7 +14,7 @@ export default {
 .loading__view {
   flex-grow: 1;
   width: 100%;
-  padding: 10em;
+  padding: 10em var(--padding-LR--global);
   display: flex;
   justify-content: center;
   align-items: center;

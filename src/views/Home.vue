@@ -58,8 +58,8 @@ export default {
   width: 100%;
   min-height: 400px;
   // margin-top: 5vh;
-  background: #eee;
-  padding: 0 15%;
+  background: var(--bg-color--primary);
+  padding: 0 var(--padding-LR--global);
   padding-top: 3vh;
 
   .card {

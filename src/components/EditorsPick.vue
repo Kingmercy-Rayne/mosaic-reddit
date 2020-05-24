@@ -60,8 +60,13 @@ export default {
   padding: 0.5em;
   cursor: pointer;
 
+  @media screen and (max-width: 480px) {
+    margin: 0 0.1em;
+  }
+
   .choices {
     position: absolute;
+    // z-index: 10;
     top: 7vh;
     // left: 50%;
     // right: 50%;

@@ -33,15 +33,10 @@ export default {
   width: 100%;
   min-height: 10vh;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
-  padding: 0.4em;
-  background: #fff;
-  box-shadow: -0.2em 0.01em 7px 0.2px #222;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  padding: 0.4em var(--padding-LR--global);
+  background: var(--bg-color--primary);
 
   ul {
     display: flex;
@@ -55,8 +50,12 @@ export default {
       transition: all 0.3s ease-in-out;
       cursor: pointer;
 
+      @media screen and (max-width: 480px) {
+        margin: 0 0.1em;
+      }
+
       &:hover, &:active {
-        border: solid thin #888;
+        // border: solid thin #888;
         // transform: scale(0.95);
       }
     }

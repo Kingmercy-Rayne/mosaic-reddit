@@ -52,6 +52,14 @@ export default {
   width: 35%;
   font-family: var(--font-family--primary);
 
+  @media screen and (max-width: 800px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 480px) {
+    flex-grow: 1;
+  }
+
   // height:100%;
   form {
     // set padding for button and input
@@ -62,15 +70,19 @@ export default {
     display: flex;
     align-items: center;
     border-radius: 1em;
-    border: solid thin var(--border-color--primary);
+    border: solid thin var(--bg-color--alt);
+    background: var(--bg-color--alt);
 
     input {
       width: 100%;
       padding: var(--form-padding);
-      font-size: 1rem;
       background: none;
       border: none;
-      // &:s
+      font-size: 1rem;
+
+      @media screen and (max-width: 800px) {
+        font-size: 0.8rem;
+      }
     }
 
     button {
@@ -86,6 +98,10 @@ export default {
       i {
         color: var(--text-color--primary);
         font-size: 1rem;
+
+        @media screen and (max-width: 800px) {
+          font-size: 0.8rem;
+        }
       }
     }
   }

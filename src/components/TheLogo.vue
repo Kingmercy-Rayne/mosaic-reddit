@@ -1,5 +1,5 @@
 <template>
-  <div class="logo__container"></div>
+  <div class="logo__container"><i class="fas fa fa-reddit"></i></div>
 </template>
 
 <script>
@@ -9,8 +9,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.logo__container{
-    border:solid thin green;
-    padding:1em;
+.logo__container {
+  // border: solid thin green;
+  padding: 0.4em;
+  font-size: 1.4rem;
 }
 </style>
