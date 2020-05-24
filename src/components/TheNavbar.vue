@@ -4,7 +4,7 @@
     <v-search />
     <ul>
       <editors-pick />
-      <li class="bookmark" @click="fetchMorePosts"><i class="fas fa fa-gear"></i></li>
+      <li class="bookmark"><i class="fas fa fa-gear"></i></li>
     </ul>
   </nav>
 </template>
@@ -20,11 +20,6 @@ export default {
     TheLogo,
     VSearch,
     EditorsPick,
-  },
-  methods: {
-    fetchMorePosts() {
-      this.$store.dispatch('FETCH_MORE_POSTS');
-    },
   },
 };
 </script>

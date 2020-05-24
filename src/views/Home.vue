@@ -16,6 +16,7 @@
         <div class="backdrop-filter"></div>
         <p class="upvotes"><i class="fas fa fa-thumbs-up"></i> {{ post.data.ups }}</p>
       </div>
+      <v-trigger @triggerIntersected="fetchMorePosts" />
     </div>
   </div>
 </template>
@@ -24,18 +25,24 @@
 // @ is an alias to /src
 import { mapState } from 'vuex';
 import LoadingIndicator from '@/components/LoadingIndicator.vue';
+import VTrigger from '@/components/VTrigger.vue';
 
 export default {
   name: 'Home',
   components: {
     LoadingIndicator,
+    VTrigger,
   },
   mounted() {
     // dispatch an action that commits a mutation
     this.$store.dispatch('INITIAL_POST_FETCH');
   },
   computed: { ...mapState(['posts', 'isLoading']) },
-  methods: {},
+  methods: {
+    fetchMorePosts() {
+      this.$store.dispatch('FETCH_MORE_POSTS');
+    },
+  },
 };
 </script>
 

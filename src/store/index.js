@@ -31,11 +31,12 @@ export default new Vuex.Store({
       state.posts = payload;
     },
     ADD_MORE_POSTS(state, payload) {
-      // console.log('heres your data', payload);
-      state.posts = [...state.posts, ...payload];
+      state.posts.push(...payload);
+      console.log('heres your data', this.state.posts);
     },
     CHANGE_AFTER_REF(state, payload) {
       state.afterRef = payload;
+      console.log(payload);
     },
     CHANGE_LOADING_STATE(state, payload) {
       state.isLoading = payload;
@@ -61,6 +62,7 @@ export default new Vuex.Store({
       axios.get(URL).then((res) => {
         commit('UPDATE_LAST_VISITED_SUBREDDIT', this.state.targetSubreddit);
         commit('CHANGE_TARGET_SUBREDDIT', '');
+        commit('CHANGE_AFTER_REF', res.data.data.after);
         commit('INIT_POSTS', res.data.data.children);
         commit('CHANGE_LOADING_STATE', false);
       });
