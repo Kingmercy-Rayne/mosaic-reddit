@@ -4,7 +4,7 @@
     <v-search />
     <ul>
       <editors-pick />
-      <li><i class="fas fa fa-book"></i></li>
+      <li class="bookmark"><i class="fas fa fa-book"></i></li>
     </ul>
   </nav>
 </template>
@@ -46,20 +46,18 @@ export default {
   ul {
     display: flex;
 
-    li {
+    .bookmark {
       padding: 0.4em;
       margin: 0 1em;
-      line-height: 0.5;
-      transition: all 0.4 ease-in-out;
       color: #222;
       font-size: 1rem;
       border-radius: 50%;
       transition: all 0.3s ease-in-out;
       cursor: pointer;
 
-      &:hover {
+      &:hover, &:active {
         border: solid thin #888;
-        transform: scale(0.95);
+        // transform: scale(0.95);
       }
     }
   }

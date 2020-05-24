@@ -1,7 +1,7 @@
 <template>
   <div class="page">
-    <loading-indicator v-if="!isLoading" />
-    <div v-if="isLoading" class="mosaic-container">
+    <loading-indicator v-if="isLoading" />
+    <div v-else class="mosaic-container">
       <!--
       <div class="card">1</div>
       <div class="card card--wide">2</div>

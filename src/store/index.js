@@ -7,10 +7,18 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     posts: [],
+    editorsPick: [
+      'computer graphics',
+      'exposure porn',
+      'i took a picture',
+      'photoshop battles',
+      'pics',
+      'post processing',
+    ],
     sortBy: 'new',
     timeframe: 'all',
     isLoading: true,
-    targetSubreddit: 'photoshopbattles',
+    targetSubreddit: 'pics',
     lastVisitedSubreddit: '',
     isSubredditValid: '',
   },
@@ -42,9 +50,9 @@ export default new Vuex.Store({
       // on init, get list of all subreddits and search through them before consequent requests
       const URL = `https://www.reddit.com/r/${this.state.targetSubreddit}/${this.state.sortBy}.json?sort=new&limit=100&t=${this.state.timeframe}`;
       axios.get(URL).then((res) => {
-        commit('INIT_POSTS', res.data.data.children);
         commit('UPDATE_LAST_VISITED_SUBREDDIT', this.state.targetSubreddit);
-        // commit('CHANGE_TARGET_SUBREDDIT', '');
+        commit('CHANGE_TARGET_SUBREDDIT', '');
+        commit('INIT_POSTS', res.data.data.children);
         commit('CHANGE_LOADING_STATE', false);
       });
     },
@@ -52,6 +60,8 @@ export default new Vuex.Store({
     FETCH_POSTS({ commit }) {
       // const URL = 'https://www.reddit.com/r/photoshopbattles/new.json?sort=new&limit=100&t=all';
       // initial URL for request is sourced from the input TargetSubreddit
+      //  .. sort through list and delete entries without image..
+      // .. if list < x no. of entries, display "insufficient bunny"
       let URL = `https://www.reddit.com/r/${this.state.targetSubreddit}/${this.state.sortBy}.json?sort=new&limit=100&t=${this.state.timeframe}`;
 
       if (this.state.targetSubreddit === '') {
