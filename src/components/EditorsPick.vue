@@ -55,9 +55,8 @@ export default {
 <style lang="stylus" scoped>
 .editors-pick__container {
   position: relative;
-  padding: 0.4em;
   margin: 0 0.3em;
-  padding: 0.5em;
+  padding: 0.4em;
   cursor: pointer;
 
   @media screen and (max-width: 480px) {
@@ -80,12 +79,23 @@ export default {
     padding-left: 0;
     transform: translateX(-50%);
     background: #fff;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: left;
+    white-space: nowrap;
+    text-transform: capitalize;
     -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
     border-radius: 3px;
     border: none;
     cursor: pointer;
+
+    @media screen and (max-width: 480px) {
+      transform: translateX(-80%);
+      font-size: 0.7rem;
+      padding-right: 2em;
+    }
 
     li {
       position: relative;
@@ -94,11 +104,9 @@ export default {
       align-items: stretch;
       justify-content: flex-start;
       margin: 0;
-      font-size: 0.8rem;
-      font-weight: 400;
-      text-align: left;
-      white-space: nowrap;
-      text-transform: capitalize;
+      // text-align: left;
+      // white-space: nowrap;
+      // text-transform: capitalize;
       transition: all 0.2s ease-in-out;
 
       &:hover {

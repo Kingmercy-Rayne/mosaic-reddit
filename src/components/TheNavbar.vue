@@ -38,6 +38,10 @@ export default {
   padding: 0.4em var(--padding-LR--global);
   background: var(--bg-color--primary);
 
+  @media screen and (max-width: 480px) {
+    padding: 0.4em 5%;
+  }
+
   ul {
     display: flex;
 

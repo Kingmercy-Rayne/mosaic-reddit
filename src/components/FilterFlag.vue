@@ -43,7 +43,12 @@ export default {
   border-radius: 0.5em;
 
   @media screen and (max-width: 800px) {
+    padding: 0.2em;
     font-size: 0.7rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 0.2em;
   }
 
   & * {

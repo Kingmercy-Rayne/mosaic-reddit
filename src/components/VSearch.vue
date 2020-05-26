@@ -49,7 +49,7 @@ export default {
 .v-search {
   // border: solid thin brown;
   // padding: 0.5em;
-  width: 35%;
+  width: 45%;
   font-family: var(--font-family--primary);
 
   @media screen and (max-width: 800px) {

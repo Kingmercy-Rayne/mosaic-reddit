@@ -12,9 +12,16 @@
       <div class="card card--wide">7</div>
       <div class="card">8</div> -->
       <div class="card" v-for="(post, id) in posts" :key="id">
-        <img :src="post.data.thumbnail" alt="" />
-        <div class="backdrop-filter"></div>
-        <p class="upvotes"><i class="fas fa fa-thumbs-up"></i> {{ post.data.ups }}</p>
+        <div class="img__container">
+          <img :src="post.data.thumbnail" alt="" />
+          <div class="backdrop-filter"></div>
+        </div>
+        <p class="post-details">
+          <span class="post__upvotes">
+            {{ post.data.ups }} upvote<span v-if="post.data.ups != 1">s</span>
+          </span>
+          <i class="fas fa fa-external-link"></i>
+        </p>
       </div>
       <v-trigger @triggerIntersected="fetchMorePosts" />
     </div>
@@ -49,11 +56,12 @@ export default {
 <style lang="stylus" scoped>
 .mosaic-container {
   // border: solid thin crimson;
-  display: grid;
-  gap: 0.7rem;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-auto-rows: 150px;
   position: relative;
+  z-index:10;
+  display: grid;
+  gap: 0.7rem 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 180px;
   z-index: 1;
   width: 100%;
   min-height: 400px;
@@ -67,11 +75,13 @@ export default {
     transition: all 0.1 ease-in-out;
     z-index: 5;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     border-radius: 0;
 
+    // border: solid thin green;
     &:hover {
       transform: scale(1.02);
       z-index: 3000;
@@ -95,46 +105,56 @@ export default {
       }
     }
 
-    .backdrop-filter {
-      position: absolute;
-      z-index: 10;
-      background: rgba(0, 0, 0, 0.2);
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      transition: all 0.1 ease-in-out;
+    .img__container {
+      position: relative;
+      width: 100%;
+      height: calc(100% - 30px);
 
-      &:hover {
-        background: rgba(0, 0, 0, 0);
+      // border: solid thin brown;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -5;
+        // visibility: hidden;
+      }
+
+      .backdrop-filter {
+        position: absolute;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.1);
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transition: all 0.1 ease-in-out;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0);
+        }
       }
     }
 
-    img {
+    .post-details {
+      position: relative;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: -5;
-      // visibility: hidden;
-    }
-
-    .upvotes {
-      position: absolute;
-      z-index: 200;
-      right: 5%;
-      bottom: 5%;
-      padding: 0.5em;
-      border-radius: 0.6em;
-      border: none;
-      font-size: 1rem;
-      color: #eee;
-      line-height: 1;
+      min-height: 30px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 0.1em;
+      color: var(--text-color--primary);
+      line-height: 1.4;
       font-size: 0.7rem;
-      background: rgba(0, 0, 0, 0.2);
-      filter: opacity(0.9) drop-shadow(8px 8px 10px #111);
+      font-weight: 700;
+
+      // font-family: var(--font-family--alt)
+      .post__upvotes {
+        padding: 0 0.5em;
+      }
     }
   }
 }

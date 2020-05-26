@@ -1,5 +1,7 @@
 <template>
-  <span ref="trigger"></span>
+  <span ref="trigger" class="trigger__indicator">
+    <div class="spinner"></div>
+  </span>
 </template>
 
 <script>
@@ -52,4 +54,33 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+.trigger__indicator {
+  position: absolute;
+  z-index:100;
+  bottom: 1px;
+  right: 45%;
+  left: 45%;
+  align-self:center;
+  padding: 3em;
+
+  .spinner {
+    height: 4em;
+    width: 4em;
+    border: 1rem solid #f8f8ff;
+    border-radius: 50%;
+    border-top: 1rem solid #cacad0;
+    animation: spin-animation 1.2s linear infinite;
+  }
+
+  @keyframes spin-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+</style>
