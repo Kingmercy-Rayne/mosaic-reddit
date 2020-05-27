@@ -70,13 +70,14 @@ export default {
     display: flex;
     align-items: center;
     border-radius: 1em;
-    border: solid thin var(--bg-color--alt);
-    background: var(--bg-color--alt);
+    border: solid thin var(--border-color--alt);
+    background: var(--search-area-bg);
 
     input {
       width: 100%;
       padding: var(--form-padding);
       background: none;
+      color: var(--text-color--primary);
       border: none;
       font-size: 1rem;
 
@@ -96,7 +97,7 @@ export default {
       padding: var(--form-padding);
 
       i {
-        color: var(--text-color--tri);
+        color: var(--text-color--primary);
         font-size: 1rem;
 
         @media screen and (max-width: 800px) {

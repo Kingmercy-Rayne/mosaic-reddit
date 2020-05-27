@@ -78,7 +78,7 @@ export default {
     padding-bottom: 1.8em;
     padding-left: 0;
     transform: translateX(-50%);
-    background: #fff;
+    background: var(--bg-color--primary);
     font-size: 0.8rem;
     font-weight: 400;
     text-align: left;
@@ -120,7 +120,7 @@ export default {
         left: 0;
         height: auto;
         width: 0.1em;
-        background: var(--border-color--alt);
+        background: var(--button-bg--primary);
       }
 
       .subreddit-listing {

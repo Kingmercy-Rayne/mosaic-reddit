@@ -1,7 +1,7 @@
 <template>
   <li class="user-preferences__container">
-    <i v-if="!isDarkMode" class="fas fa fa-gear" @click="setDarkMode"></i>
-    <i v-if="isDarkMode" class="fas fa fa-book" @click="setLightMode"></i>
+    <i v-if="!isDarkMode" class="fas fa fa-moon-o" @click="setDarkMode"></i>
+    <i v-if="isDarkMode" class="fas fa fa-sun-o" @click="setLightMode"></i>
   </li>
 </template>
 

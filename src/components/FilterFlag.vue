@@ -32,7 +32,7 @@ export default {
 .filter-flag {
   padding: 0.3em;
   border: solid thin var(--border-color--primary);
-  background: var(--button-bg--primary);
+  background: transparent;
   font-family: var(--font-family--alt);
   font-size: 0.8rem;
   font-weight: 700;
@@ -42,6 +42,7 @@ export default {
   cursor: pointer;
   text-transform: capitalize;
   border-radius: 0.5em;
+  color: var(--text-color--primary);
 
   @media screen and (max-width: 800px) {
     padding: 0.2em;
@@ -66,7 +67,7 @@ export default {
 }
 
 .filter-flag__background--active {
-  background: var(--button-bg--alt);
+  background: var(--button-bg--primary);
   color: var(--text-color--alt);
   border: none;
 }

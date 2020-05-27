@@ -38,7 +38,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 0.4em var(--padding-LR--global);
-  background: var(--bg-color--primary);
+  background: var(--bg-color--alt);
 
   @media screen and (max-width: 480px) {
     padding: 0.4em 5%;
