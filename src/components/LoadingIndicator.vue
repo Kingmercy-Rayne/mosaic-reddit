@@ -18,5 +18,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  // background: var(--bg-color--primary);
+  background: transparent;
 }
 </style>

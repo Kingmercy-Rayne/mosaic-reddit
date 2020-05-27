@@ -47,7 +47,7 @@ export default {
   min-height: 10vh;
   width: 100%;
   padding: 1em var(--padding-LR--global);
-  background: var(bg--color--primary);
+  background: var(--bg-color--primary);
   // border: solid thin crimson;
   color: black;
 

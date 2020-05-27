@@ -31,7 +31,8 @@ export default {
 <style lang="stylus" scoped>
 .filter-flag {
   padding: 0.3em;
-  border: solid thin #bbb;
+  border: solid thin var(--border-color--primary);
+  background: var(--button-bg--primary);
   font-family: var(--font-family--alt);
   font-size: 0.8rem;
   font-weight: 700;
@@ -65,7 +66,7 @@ export default {
 }
 
 .filter-flag__background--active {
-  background: var(--button-bg--primary);
+  background: var(--button-bg--alt);
   color: var(--text-color--alt);
   border: none;
 }

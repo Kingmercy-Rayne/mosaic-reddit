@@ -96,7 +96,7 @@ export default {
       padding: var(--form-padding);
 
       i {
-        color: var(--text-color--primary);
+        color: var(--text-color--tri);
         font-size: 1rem;
 
         @media screen and (max-width: 800px) {

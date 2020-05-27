@@ -4,7 +4,7 @@
     <v-search />
     <ul>
       <editors-pick />
-      <li class="bookmark"><i class="fas fa fa-gear"></i></li>
+      <user-preferences />
     </ul>
   </nav>
 </template>
@@ -13,6 +13,7 @@
 import TheLogo from '@/components/TheLogo.vue';
 import VSearch from '@/components/VSearch.vue';
 import EditorsPick from '@/components/EditorsPick.vue';
+import UserPreferences from '@/components/UserPreferences.vue';
 
 export default {
   name: 'TheNavbar',
@@ -20,6 +21,7 @@ export default {
     TheLogo,
     VSearch,
     EditorsPick,
+    UserPreferences,
   },
 };
 </script>
