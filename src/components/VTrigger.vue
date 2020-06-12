@@ -65,12 +65,12 @@ export default {
   padding: 3em;
 
   .spinner {
-    height: 4em;
-    width: 4em;
-    border: 1rem solid #f8f8ff;
+    height: 4rem;
+    width: 4rem;
+    border: 0.8em solid #f8f8ff;
     border-radius: 50%;
-    border-top: 1rem solid #cacad0;
-    animation: spin-animation 1.2s linear infinite;
+    border-top: 0.8rem solid #cacad0;
+    animation: spin-animation 1.3s linear infinite;
   }
 
   @keyframes spin-animation {

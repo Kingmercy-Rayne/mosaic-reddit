@@ -30,6 +30,12 @@ export default {
       window.localStorage.setItem('theme', 'light');
     },
   },
+  mounted() {
+    // check for theme in localstorage and edit toggle-variable accordingly
+    const themeState = window.localStorage.getItem('theme');
+    // eslint-disable-next-line
+    this.isDarkMode = themeState === 'dark' ? true : false;
+  },
 };
 </script>
 
