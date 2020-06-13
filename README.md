@@ -6,6 +6,11 @@ A SPA that fetches data from the public reddit API and displays images from vari
 
 Using the search-field, the user gets to choose a specific subreddit to pull data from, with r/pics being the default initial page.
 
+## Screenshots
+
+![Light Mode](screenshots/light_mode.png)
+![Dark Mode](screenshots/dark_mode.png)
+
 ## Project setup
 
 ```
