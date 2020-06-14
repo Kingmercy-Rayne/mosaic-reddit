@@ -43,6 +43,11 @@ export default {
   text-transform: capitalize;
   border-radius: 0.5em;
   color: var(--text-color--primary);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 
   @media screen and (max-width: 800px) {
     padding: 0.2em;

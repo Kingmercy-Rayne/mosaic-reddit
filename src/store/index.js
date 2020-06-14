@@ -20,7 +20,7 @@ export default new Vuex.Store({
     ],
     isLoading: true,
     // value synced with the searchbar
-    targetSubreddit: 'pics',
+    targetSubreddit: 'itookapicture',
     // last valid endpoint visited..how do you test for validity???
     lastVisitedSubreddit: '',
     isSubredditValid: '',

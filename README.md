@@ -4,7 +4,7 @@ A SPA that fetches data from the public reddit API and displays images from vari
 
 ## Operation
 
-Using the search-field, the user gets to choose a specific subreddit to pull data from, with r/pics being the default initial page.
+Using the search-field, the user gets to choose a specific subreddit to pull data from --with r/pics as the default page.
 
 ## Screenshots
 

@@ -12,8 +12,9 @@
       <div class="card card--wide">7</div>
       <div class="card">8</div> -->
       <div class="card" v-for="(post, id) in posts" :key="id">
-        <div class="img__container">
-          <img :src="post.data.thumbnail" alt="" />
+        <div class="img__container" @click="viewPostOnReddit(post.data.permalink)">
+          <!-- <img :src="post.data.thumbnail" alt="" loading="lazy" /> -->
+          <img :src="post.data.url" alt="" loading="lazy" />
           <div class="backdrop-filter"></div>
         </div>
         <p class="post-details">
@@ -48,6 +49,11 @@ export default {
   methods: {
     fetchMorePosts() {
       this.$store.dispatch('FETCH_MORE_POSTS');
+    },
+    viewPostOnReddit(permalink) {
+      // redirect to original thread
+      const URL = `https://reddit.com${permalink}`;
+      window.open(URL);
     },
   },
 };
